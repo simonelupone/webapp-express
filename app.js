@@ -4,6 +4,9 @@ const port = 3000;
 
 const movieRouter = require("./routers/movie");
 
+// body-parser middleware
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
