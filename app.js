@@ -8,10 +8,10 @@ const movieRouter = require("./routers/movie");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Movies API Server");
 });
 
-app.use("/movies", movieRouter);
+app.use("/api/movies", movieRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
