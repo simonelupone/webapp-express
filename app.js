@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.SERVER_PORT || 3000;
 
-const movieRouter = require("./routers/movie");
+const movieRouter = require("./routers/movieRouter");
 
 // body-parser middleware
 app.use(express.json());
