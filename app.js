@@ -22,10 +22,10 @@ app.get("/", (req, res) => {
   res.send("Movies API Server");
 });
 
+app.use("/api/movies", movieRouter);
+
 app.use(errorsHandler);
 app.use(notFound);
-
-app.use("/api/movies", movieRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
