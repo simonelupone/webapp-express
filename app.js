@@ -7,6 +7,7 @@ const movieRouter = require("./routers/movieRouter");
 // import middleware
 const imagePathMiddleware = require("./middlewares/imagePath");
 const errorsHandler = require("./middlewares/errorsHandler");
+const notFound = require("./middlewares/notFound");
 
 // static-assets middleware
 app.use(express.json("public"));
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(errorsHandler);
+app.use(notFound);
 
 app.use("/api/movies", movieRouter);
 
