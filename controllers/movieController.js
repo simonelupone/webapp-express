@@ -5,7 +5,17 @@ const index = (req, res) => {
     if (err)
       return res.status(500).json({ error: "Database query failed: " + err });
 
-    res.json(result);
+    // loop to overwrite img property
+    const movies = result.map((movie) => {
+      const obj = {
+        ...movie,
+        image: req.imagePath + movie.image,
+      };
+
+      return obj;
+    });
+
+    res.json(movies);
   });
 };
 
